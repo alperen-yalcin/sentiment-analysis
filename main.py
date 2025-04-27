@@ -34,7 +34,7 @@ test_df = pd.DataFrame({
 
 def clean_text(text):
     text = text.lower()
-    text = re.sub(r'[^\w\s]', '', text)
+    text = re.sub(r'[^\w\s]', '', text).strip()
     return text
 
 train_df['cleaned_review'] = train_df['review'].apply(clean_text)
